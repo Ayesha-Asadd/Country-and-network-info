@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Country & Network Info</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Age Verification Gate -->
+  <div id="ageGateOverlay" class="age-gate-overlay">
+    <div class="age-gate-content">
+      <h2><i class="fas fa-shield-alt"></i> Age Verification</h2>
+      <p>Please enter your date of birth to continue.</p>
+      <div class="dob-inputs">
+        <select id="gateDay"><option value="">Day</option></select>
+        <select id="gateMonth"><option value="">Month</option></select>
+        <select id="gateYear"><option value="">Year</option></select>
+      </div>
+      <p id="ageGateError"></p>
+      <button id="verifyAgeBtn">Verify Age & Enter</button>
+    </div>
+  </div>
+
+  <!-- Main Application -->
+  <div id="appWrapper">
+    <div class="header">
+      <div>
+        <h1><i class="fas fa-globe-americas"></i> Info Portal</h1>
+        <p>Your Network & Country Explorer</p>
+      </div>
+      <button id="modeToggle"><i class="fas fa-moon"></i> Dark Mode</button>
+    </div>
+
+    <div class="container">
+      <div class="section welcome-section">
+        <h2>🎉 Welcome to the Info Portal!</h2>
+        <p class="welcome-text">Explore your network, discover countries, and more. 🚀</p>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-wifi"></i> Network Information</h2>
+        <div class="card">
+          <div>
+            <strong><i class="fas fa-network-wired"></i> IP Address</strong>
+            <p>Detected from your device</p>
+          </div>
+          <span id="ipAddress">Fetching...</span>
+        </div>
+        <div class="card">
+          <div>
+            <strong><i class="fas fa-map-marker-alt"></i> Location</strong>
+            <p>Country / City</p>
+          </div>
+          <span id="userLocation">Fetching...</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-birthday-cake"></i> Your Age</h2>
+        <div id="ageDisplay" class="age-result-box"></div>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-flag"></i> Country Explorer</h2>
+        <label for="countrySearch"><i class="fas fa-search-location"></i> Search for a Country</label><br>
+        <input type="text" id="countrySearch" placeholder="Type a country name..." />
+        <div id="countryDisplay" class="country-display" style="display: none;">
+          <h3 class="country-heading">Country Facts</h3>
+          <div class="country-content">
+            <div id="countryInfo" class="fact-box"></div>
+            <img id="countryFlag" src="" alt="Flag" class="flag-img" />
+          </div>
+        </div>
+      </div>
+
+      <button id="resetBtn" class="reset-btn"><i class="fas fa-redo-alt"></i> Reset & Re-verify</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
