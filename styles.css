@@ -99,10 +99,11 @@ body.dark-mode {
   color: #e53e3e;
   min-height: 20px;
   font-weight: bold;
+  margin-top: -5px;
 }
 
 #verifyAgeBtn {
-  margin-top: 15px;
+  margin-top: -5px;
   padding: 12px 25px;
   background: #3182ce;
   color: white;
@@ -129,7 +130,49 @@ body.dark-mode {
   margin: auto;
   padding: 30px 20px;
 }
+/* Add this to your styles.css file */
+.confirm-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
 
+.confirm-btn {
+  flex: 1;
+  padding: 12px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.confirm-yes {
+  background: #3182ce; /* Blue */
+  color: white;
+}
+.confirm-yes:hover {
+  background: #2b6cb0;
+  transform: scale(1.02);
+}
+
+.confirm-no {
+  background: #e2e8f0; /* Light Gray */
+  color: #2d3748;
+}
+.confirm-no:hover {
+  background: #cbd5e0;
+}
+
+.dark-mode .confirm-no {
+    background: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-mode .confirm-no:hover {
+    background: #2d3748;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -375,7 +418,46 @@ select {
   background-color: #c82333;
   transform: scale(1.05);
 }
+/* Add this to your styles.css file */
+.search-wrapper {
+  position: relative; /* This is crucial for positioning the suggestions box */
+}
 
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #cbd5e0;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  max-width: 300px; /* Match the input width */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: none; /* Hidden by default */
+}
+
+.dark-mode .suggestions-list {
+  background: #2e2e2e;
+  border-color: #4a5568;
+}
+
+.suggestions-list div {
+  padding: 12px 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.suggestions-list div:hover {
+  background-color: #f0f4f8;
+}
+
+.dark-mode .suggestions-list div:hover {
+  background-color: #3a3a3a;
+}
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }

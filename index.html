@@ -15,7 +15,7 @@
       <h2><i class="fas fa-shield-alt"></i> Age Verification</h2>
       <p>Please enter your date of birth to continue.</p>
       <div class="dob-inputs">
-        <select id="gateDay"><option value="">Day</option></select>
+        <select id="gateDay"><option value="">Date</option></select>
         <select id="gateMonth"><option value="">Month</option></select>
         <select id="gateYear"><option value="">Year</option></select>
       </div>
@@ -64,17 +64,35 @@
       </div>
 
       <div class="section">
-        <h2><i class="fas fa-flag"></i> Country Explorer</h2>
-        <label for="countrySearch"><i class="fas fa-search-location"></i> Search for a Country</label><br>
-        <input type="text" id="countrySearch" placeholder="Type a country name..." />
-        <div id="countryDisplay" class="country-display" style="display: none;">
-          <h3 class="country-heading">Country Facts</h3>
-          <div class="country-content">
-            <div id="countryInfo" class="fact-box"></div>
-            <img id="countryFlag" src="" alt="Flag" class="flag-img" />
-          </div>
-        </div>
-      </div>
+       <div class="section">
+  <h2><i class="fas fa-flag"></i> Country Explorer</h2>
+
+  <div class="search-wrapper">
+    <label for="countrySearch"><i class="fas fa-search-location"></i> Search for a Country</label><br>
+    <input type="text" id="countrySearch" placeholder="Type a country name..." autocomplete="off" />
+    <div id="suggestionsBox" class="suggestions-list"></div>
+  </div>
+
+  <div id="countryDisplay" class="country-display" style="display: none;">
+    <h3 class="country-heading">Country Facts</h3>
+    <div class="country-content">
+      <div id="countryInfo" class="fact-box"></div>
+      <img id="countryFlag" src="" alt="Flag" class="flag-img" />
+    </div>
+  </div>
+
+  </div>
+
+<div id="confirmOverlay" class="age-gate-overlay" style="display: none;">
+  <div class="age-gate-content">
+    <h2 id="confirmTitle"><i class="fas fa-question-circle"></i> Confirmation</h2>
+    <p id="confirmMessage">Are you sure?</p>
+    <div class="confirm-buttons">
+      <button id="confirmYesBtn" class="confirm-btn confirm-yes">Yes, Change</button>
+      <button id="confirmNoBtn" class="confirm-btn confirm-no">Cancel</button>
+    </div>
+  </div>
+</div>
 
       <button id="resetBtn" class="reset-btn"><i class="fas fa-redo-alt"></i> Reset & Re-verify</button>
     </div>
